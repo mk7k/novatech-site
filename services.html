@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наші послуги | NovaTech</title>
+    <style>
+      :root {
+        --bg: #1a1d23;
+        --panel: #202329;
+        --accent: #00b4d8;
+        --text: #f1f1f1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      header {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      header .logo {
+        color: var(--accent);
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      main {
+        flex: 1;
+        padding-top: 6rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        width: 100%;
+        gap: 2.2rem;
+        padding: 0 2rem;
+      }
+
+      nav {
+        position: sticky;
+        top: 15.5rem;
+        justify-self: end;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 1.15rem;
+        position: relative;
+        padding-left: 1.15rem;
+        transition: .2s;
+      }
+
+      nav a::before {
+        content: "» ";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      nav .active {
+        color: var(--accent);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .content h1 {
+        font-size: 2.9rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .intro {
+        padding: 1.8rem 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        max-width: 620px;
+      }
+
+      .intro h2 {
+        font-size: 1.55rem;
+        margin-bottom: .8rem;
+      }
+
+      .intro p {
+        font-size: .96rem;
+        line-height: 1.5;
+      }
+
+      .carousel {
+        background: linear-gradient(#0f1218, #141922);
+        padding: 1.4rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 760px;
+      }
+
+      .arrow {
+        background: var(--panel);
+        border: none;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px var(--accent);
+        color: var(--accent);
+        font-size: 1.25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: .25s;
+      }
+
+      .arrow:hover {
+        background: var(--accent);
+        color: var(--bg);
+        box-shadow: 0 0 10px var(--accent);
+      }
+
+      .track-wrap {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .track {
+        display: flex;
+        gap: 1rem;
+        transition: transform .45s ease;
+        list-style: none;
+      }
+
+      .card {
+        flex: 0 0 200px;
+        background: var(--panel);
+        border-radius: 8px;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, .05);
+        text-align: center;
+      }
+
+      .card h3 {
+        font-size: 1.15rem;
+        color: var(--accent);
+        margin-bottom: .55rem;
+      }
+
+      .card p {
+        font-size: .88rem;
+      }
+
+      .carousel-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.4rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn {
+        background: var(--accent);
+        color: var(--bg);
+        padding: 0.75rem 1.4rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: default;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background: #00d4ff;
+      }
+
+      @media(max-width:960px) {
+        .wrapper {
+          flex-direction: column;
+          align-items: center;
+          padding: 0 1rem;
+        }
+
+        nav {
+          margin: 1.5rem 0 0 0;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .carousel {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">NovaTech</a>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="content">
+          <section class="intro">
+            <h2>Що ми пропонуємо</h2>
+            <p>Від ідеї до масштабування — NovaTech покриває весь життєвий цикл продукту. Ми поєднуємо досвід, інновації та agile‑процеси, аби вивести ваш бізнес на новий рівень.</p>
+          </section>
+          <div class="carousel">
+            <button class="arrow prev" aria-label="Назад">&#10094;</button>
+            <div class="track-wrap">
+              <ul class="track"></ul>
+            </div>
+            <button class="arrow next" aria-label="Вперед">&#10095;</button>
+          </div>
+          <div class="carousel-buttons">
+            <span class="btn">Замовити проєкт</span>
+            <span class="btn">Зв'язатись з нами</span>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">Головна</a>
+            </li>
+            <li>
+              <a href="about.html">Про нас</a>
+            </li>
+            <li>
+              <a href="services.html" class="active">Наші послуги</a>
+            </li>
+            <li>
+              <a href="jobs.html">Робота</a>
+            </li>
+            <li>
+              <a href="contacts.html">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <footer style="margin-left: 570px; padding:1rem 0 .8rem; font-size:.83rem; color:#888;"> © 2025 NovaTech. Усі права захищені. <br>
+      <a href="#" style="color:#888;text-decoration:none;padding:0 .3rem;">Facebook</a>| <a href="#" style="color:#888;text-decoration:none;padding:0 .3rem;">LinkedIn</a>
+    </footer>
+    <script>
+      const services = [{
+        t: 'Розробка ПЗ',
+        d: 'Custom software під будь-які бізнес-процеси, clean code і повний супровід.'
+      }, {
+        t: 'Web‑додатки',
+        d: 'React, Node — будуємо масштабовані SaaS та e‑commerce рішення.'
+      }, {
+        t: 'Мобільні додатки',
+        d: 'Native iOS / Android або Flutter кросплатформа з крутим UX.'
+      }, {
+        t: 'UI / UX дизайн',
+        d: 'Research, прототипи й вишуканий інтерфейс, що конвертує.'
+      }, {
+        t: 'DevOps & Cloud',
+        d: 'CI/CD, Docker, Kubernetes. AWS, Azure, GCP — вигідно й безпечн.'
+      }];
+      const track = document.querySelector('.track');
+      const prev = document.querySelector('.prev');
+      const next = document.querySelector('.next');
+      const card = 200,
+        gap = 16;
+      services.forEach(o => track.insertAdjacentHTML('beforeend', `
+            <li class="card">
+              <h3>${o.t}</h3>
+              <p>${o.d}</p>
+            </li>`));
+      track.prepend(track.lastElementChild.cloneNode(true));
+      track.append(track.children[1].cloneNode(true));
+      let i = 1;
+      const move = () => track.style.transform = `translateX(-${i*(card+gap)}px)`;
+      move();
+      const slide = d => {
+        i += d;
+        track.style.transition = 'transform .45s ease';
+        move();
+      };
+      track.addEventListener('transitionend', () => {
+        if (i === 0) {
+          i = services.length;
+          track.style.transition = 'none';
+          move();
+        }
+        if (i === services.length + 1) {
+          i = 1;
+          track.style.transition = 'none';
+          move();
+        }
+      });
+      prev.onclick = () => slide(-1);
+      next.onclick = () => slide(1);
+    </script>
+  </body>
+</html>

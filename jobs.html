@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Робота | NovaTech</title>
+    <style>
+      :root {
+        --bg: #1a1d23;
+        --panel: #202329;
+        --accent: #00b4d8;
+        --text: #f1f1f1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      /* header */
+      header {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      header .logo {
+        color: var(--accent);
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      /* fixed nav on right centre */
+      nav {
+        position: fixed;
+        right: 1.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        text-align: right;
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 1.15rem;
+        position: relative;
+        padding-left: 1.15rem;
+        transition: 0.2s;
+      }
+
+      nav a::before {
+        content: "» ";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      nav a:hover,
+      nav .active {
+        color: var(--accent);
+      }
+
+      /* main area */
+      main {
+        flex: 1;
+        padding-top: 6rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 700px;
+        width: 100%;
+        align-items: center;
+      }
+
+      .content h1 {
+        font-size: 3rem;
+      }
+
+      /* aside text */
+      .aside-text {
+        background: var(--panel);
+        padding: 2rem 2.2rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        line-height: 1.55;
+        text-align: center;
+      }
+
+      /* form */
+      form {
+        background: var(--panel);
+        padding: 2rem 2.2rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        font-size: 1rem;
+      }
+
+      input {
+        padding: 0.7rem 0.9rem;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: #15181d;
+        color: var(--text);
+      }
+
+      input:focus {
+        outline: 1px solid var(--accent);
+      }
+
+      button {
+        align-self: flex-start;
+        background: var(--accent);
+        color: var(--bg);
+        border: none;
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background: #02c0f0;
+      }
+
+      /* responsive */
+      @media (max-width: 960px) {
+        nav {
+          position: static;
+          transform: none;
+          margin: 2rem 0 0;
+          text-align: center;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .content {
+          padding: 0 1rem;
+        }
+
+        form {
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">NovaTech</a>
+    </header>
+    <!-- fixed sidebar nav -->
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Головна</a>
+        </li>
+        <li>
+          <a href="about.html">Про нас</a>
+        </li>
+        <li>
+          <a href="services.html">Наші послуги</a>
+        </li>
+        <li>
+          <a href="jobs.html" class="active">Робота</a>
+        </li>
+        <li>
+          <a href="contacts.html">Контакти</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <h1>Робота</h1>
+        <p class="aside-text">Заповніть коротку форму з контактними даними, і ми зателефонуємо вам, щойно підберемо релевантну позицію.</p>
+        <form action="job_thanks.html" method="get">
+          <label>Ім’я <input type="text" name="first" placeholder="Введіть ім’я" required>
+          </label>
+          <label>Прізвище <input type="text" name="last" placeholder="Введіть прізвище" required>
+          </label>
+          <label>Номер телефону <input type="tel" name="phone" placeholder="Напр. +380 XX XXX XX XX" required>
+          </label>
+          <button type="submit">Відправити</button>
+        </form>
+      </div>
+    </main>
+    <footer style="text-align:center;padding:1rem 0 .8rem;font-size:.83rem;color:#888;"> © 2025 NovaTech. Усі права захищені. <br>
+      <a href="#" style="color:#888;text-decoration:none;padding:0 .3rem;">Facebook</a> | <a href="#" style="color:#888;text-decoration:none;padding:0 .3rem;">LinkedIn</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дякуємо | NovaTech</title>
+    <style>
+      :root {
+        --bg: #1a1d23;
+        --panel: #202329;
+        --accent: #00b4d8;
+        --text: #f1f1f1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.2rem;
+        text-align: center;
+      }
+
+      header {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      header .logo {
+        color: var(--accent);
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .panel {
+        background: var(--panel);
+        padding: 2.4rem 2.8rem;
+        border-radius: 10px;
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+        line-height: 1.55;
+        margin-bottom: 2rem;
+        max-width: 50ch;
+        margin-inline: auto;
+      }
+
+      a.btn {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--bg);
+        padding: .85rem 2rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background .2s;
+      }
+
+      a.btn:hover {
+        background: #02c0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">NovaTech</a>
+    </header>
+    <div class="panel">
+      <h1>Дякуємо!</h1>
+      <p>Ваші дані успішно надіслано. Ми опрацюємо запит і зателефонуємо вам у найкоротші терміни.</p>
+      <a href="jobs.html" class="btn">Повернутися на попередню сторінку</a>
+    </div>
+  </body>
+</html>

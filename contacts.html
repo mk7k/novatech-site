@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакти | NovaTech</title>
+    <style>
+      :root {
+        --bg: #1a1d23;
+        --panel: #202329;
+        --accent: #00b4d8;
+        --text: #f1f1f1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      header {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      header .logo {
+        color: var(--accent);
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      /* fixed nav */
+      nav {
+        position: fixed;
+        right: 1.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        text-align: right;
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 1.15rem;
+        padding-left: 1.15rem;
+        position: relative;
+        transition: .2s;
+      }
+
+      nav a::before {
+        content: "» ";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      nav a:hover,
+      nav .active {
+        color: var(--accent);
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 6rem;
+      }
+
+      .content {
+        max-width: 800px;
+        width: 100%;
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 3rem;
+      }
+
+      .info-block {
+        background: var(--panel);
+        padding: 2rem 2.4rem;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+      }
+
+      .info-item h3 {
+        color: var(--accent);
+        font-size: 1.15rem;
+      }
+
+      .info-item p {
+        font-size: .95rem;
+      }
+
+      /* map placeholder */
+      .map {
+        grid-column: 1/3;
+        border: none;
+        width: 100%;
+        height: 320px;
+        border-radius: 8px;
+        filter: grayscale(.2);
+      }
+
+      /* responsive */
+      @media(max-width:960px) {
+        nav {
+          position: static;
+          transform: none;
+          margin: 2rem 0 0;
+          text-align: center;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .info-block {
+          grid-template-columns: 1fr;
+        }
+
+        .map {
+          grid-column: 1/2;
+          height: 260px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">NovaTech</a>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Головна</a>
+        </li>
+        <li>
+          <a href="about.html">Про нас</a>
+        </li>
+        <li>
+          <a href="services.html">Наші послуги</a>
+        </li>
+        <li>
+          <a href="team.html">Наша команда</a>
+        </li>
+        <li>
+          <a href="jobs.html">Робота</a>
+        </li>
+        <li>
+          <a href="contacts.html" class="active">Контакти</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <h1>Контакти</h1>
+        <section class="info-block">
+          <div class="info-item">
+            <h3>Офіс</h3>
+            <p>вул. 600‑річчя, 21 <br>21021 Вінниця, Україна </p>
+          </div>
+          <div class="info-item">
+            <h3>Графік</h3>
+            <p>Пн‑Пт: 09:00 – 18:00 <br>Сб‑Нд: вихідні </p>
+          </div>
+          <div class="info-item">
+            <h3>Телефон</h3>
+            <p>
+              <a href="tel:+380441234567" style="color:var(--text);text-decoration:none;">+380 95 123 45 67</a>
+            </p>
+          </div>
+          <div class="info-item">
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:info@novatech.ua" style="color:var(--text);text-decoration:none;">info@novatech.ua</a>
+            </p>
+          </div>
+          <!-- карта -->
+          <iframe class="map" title="Наш офіс" src="https://maps.google.com/maps?q=49.224161577468614,28.426770188455382&z=15&output=embed""" loading="lazy"></iframe>
+        </section>
+      </div>
+    </main>
+    <footer style="text-align:center;padding:1rem 0 .8rem;font-size:.83rem;color:#888;"> © 2025 NovaTech. Усі права захищені. <br>
+      <a href="#" style="color:#888;text-decoration:none;padding:0 .3rem;">Facebook</a> | <a href="#" style="color:#888;text-decoration:none;padding:0 .3rem;">LinkedIn</a>
+    </footer>
+  </body>
+</html>
