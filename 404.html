@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — Сторінку не знайдено</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background-color: #1a1d23;
+      color: #f1f1f1;
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: #00b4d8;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    a.button {
+      padding: 0.75rem 1.5rem;
+      background: #00b4d8;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background: #009ec2;
+    }
+
+    .mascot {
+      animation: pulseGlow 1.8s infinite ease-in-out;
+    }
+
+    .mascot {
+      animation: pulseGlow 1.8s infinite ease-in-out, 
+                 shakeIt 0.4s infinite, 
+                 wobble 2.5s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px #00b4d8);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #00ffff);
+      }
+    }
+
+    @keyframes shakeIt {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(1px, -1px); }
+      50% { transform: translate(-1px, 1px); }
+      75% { transform: translate(1px, 1px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes wobble {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(2deg); }
+    }
+
+  </style>
+</head>
+<body onmousemove="document.documentElement.style.setProperty('--x', event.clientX + 'px'); document.documentElement.style.setProperty('--y', event.clientY + 'px');">  <h1>404</h1>
+  <img src="404logo2.png" alt="Маскот" class="mascot" style="max-width: 320px; margin: 1rem 0;" />
+  <p>Ой... здається, ти натиснув на кнопку, яка ще не веде нікуди 🪐</p>
+  <a href="index.html" class="button">Повернутись на головну</a>
+</body>
+</html>

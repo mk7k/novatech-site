@@ -22,3 +22,20 @@ body::before {
   border-radius: 50%;
   animation: glowPulse 6s infinite linear;
 }
+
+a.your-beautiful-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #00b4d8;
+  color: black;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+a.your-beautiful-button:hover {
+  background: #009ec2;
+}
+
