@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Про нас | NovaTech</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
       :root {
         --bg-dark: #1a1d23;
@@ -188,7 +189,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onmousemove="document.documentElement.style.setProperty('--x', event.clientX + 'px'); document.documentElement.style.setProperty('--y', event.clientY + 'px');">
     <header>
       <a href="index.html" class="logo">NovaTech</a>
     </header>
