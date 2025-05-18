@@ -87,12 +87,15 @@
       }
 
       .emblem {
-        display: flex;
-        justify-content: flex-start;
+        position: absolute;
+        left: 690px;
+        top: 200px;
       }
 
+
+
       .emblem img {
-        width: 550px;
+        width: 400px;
         height: auto;
         max-width: 600px;
         /* не дозволяє розтягнути більше */
@@ -172,8 +175,11 @@
       /* ==== Adaptive tweaks ==== */
       @media (max-width:900px) {
         .hero {
-          grid-template-columns: 1fr;
-          text-align: center;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 2rem;
+          padding: 4rem 3rem 4rem;
+          width: 100%;
         }
 
         .nav-links {
