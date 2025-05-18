@@ -6,9 +6,6 @@
   100% { box-shadow: 0 0 20px 8px rgba(255, 0, 255, 1); }
 }
 
-
-
-
 body::before {
   content: "";
   position: fixed;
@@ -38,4 +35,75 @@ a.your-beautiful-button {
 a.your-beautiful-button:hover {
   background: #009ec2;
 }
+
+/* === fade-heading: плавна поява (fade in) === */
+.fade-heading {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === animated-heading: виїзд зліва направо === */
+.animated-heading {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideIn 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === count-animate: поява цифр знизу вгору (з затримками для кожної) === */
+.count-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: riseIn 0.9s ease-out forwards;
+}
+
+/* Затримка для кожного елемента з класом count-animate */
+.count-animate:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.count-animate:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.count-animate:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes riseIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === slide-in-right: виїзд справа наліво (для посилань або елементів) === */
+.slide-in-right {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideFromRight 0.8s ease-out forwards;
+}
+
+@keyframes slideFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
 
