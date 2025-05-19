@@ -79,6 +79,17 @@
       a.btn:hover {
         background: #02c0f0;
       }
+
+      .mascot {
+        filter: drop-shadow(0 0 12px #00b4d8);
+        animation: glow 1.6s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        0% { filter: drop-shadow(0 0 12px #00b4d8); }
+        100% { filter: drop-shadow(0 0 22px #00ffff); }
+      }
+
     </style>
   </head>
   <body onmousemove="document.documentElement.style.setProperty('--x', event.clientX + 'px'); document.documentElement.style.setProperty('--y', event.clientY + 'px');">
@@ -88,6 +99,7 @@
     <div class="panel">
       <h1>Дякуємо!</h1>
       <p>Ваші дані успішно надіслано. Ми опрацюємо запит і зателефонуємо вам у найкоротші терміни.</p>
+        <img src="thanks.png" alt="Маскот" class="mascot" style="max-width: 320px; margin: 1rem 0;" />
       <a href="jobs.html" class="btn">Повернутися на попередню сторінку</a>
     </div>
   </body>
