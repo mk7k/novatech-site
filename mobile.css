@@ -1,0 +1,68 @@
+
+/* === mobile.css: адаптація для мобілок === */
+
+body {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* Меню: центрування і горизонтальний список */
+.nav-links {
+  justify-self: center !important;
+  text-align: center !important;
+}
+
+.nav-links ul {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+}
+
+/* Емблема: менший розмір */
+.emblem img {
+  width: 180px !important;
+}
+
+/* Секція hero / about / wrapper: один стовпець */
+.hero,
+.about,
+.wrapper {
+  grid-template-columns: 1fr !important;
+  padding: 2rem 1rem !important;
+  gap: 1.5rem !important;
+  text-align: center !important;
+}
+
+/* Статистика — центрувати */
+.highlights {
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Форма — 100% ширини */
+form {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 1rem !important;
+}
+
+/* Панель із текстом — менше відступів */
+.panel {
+  padding: 1.5rem 1.5rem !important;
+}
+
+/* Кнопки */
+a.btn,
+a.button,
+button {
+  font-size: 1rem !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* Трохи менші заголовки */
+h1 {
+  font-size: 2rem !important;
+}
+
